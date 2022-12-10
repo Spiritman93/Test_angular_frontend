@@ -15,4 +15,8 @@ export class RestConnectorService {
     return this.httpClient.get("http://localhost:8081/testfind")
   }
 
+  public getRestTest() {
+    return this.httpClient.get("http://localhost:8081/testlawpage")
+  }
+
 }

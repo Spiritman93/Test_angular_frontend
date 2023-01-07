@@ -13,6 +13,40 @@ id = {{inf1.lawId}}
 name = {{inf1.lawName}}
 <br>
 type = {{inf1.lawType}}
+<br>
+
+<div class="form-group"> <!--  submitForm-->
+  <label>lawName: </label>
+  <input class="form-control" name="lawName" [(ngModel)]="lawName" />
+</div>
+<div class="form-group">
+  <label>lawType: </label>
+  <input class="form-control" name="lawType" [(ngModel)]="lawType">
+
+
+
+
+  <button (click)="   ">Add</button>
+</div>
+
+<table class="table">
+  <thead>
+  <th scope="col">lawId</th>
+  <th scope="col">lawName</th>
+  <th scope="col">lawType</th>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let Law of inf1">
+    <td>{{Law.lawId}}</td>
+    <td>{{Law.lawName}}</td>
+    <td>{{Law.lawType}}</td>
+  </tr>
+  </tbody>
+
+</table>
+
+
 </body>
 </html>
 

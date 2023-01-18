@@ -15,18 +15,18 @@ name = {{inf1.lawName}}
 type = {{inf1.lawType}}
 <br>
 
-<div class="form-group"> <!--  submitForm-->
+
+<div class="form-group"><!--  submitForm-->
+  <form [FormGroup]="form" (ngSubmit)="postData()">
   <label>lawName: </label>
-  <input class="form-control" name="lawName" [(ngModel)]="lawName" />
-</div>
-<div class="form-group">
+  <input class="form-control" formControlName="lawName"/>
   <label>lawType: </label>
-  <input class="form-control" name="lawType" [(ngModel)]="lawType">
+  <input class="form-control" formControlName="lawType"/>
+
+  </form>
 
 
-
-
-  <button (click)="   ">Add</button>
+  <button type="button" class="btn btn-primary" (click)="postData()">Add</button>
 </div>
 
 <table class="table">

@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {RestConnectorService} from "../rest-connector/rest-connector.service";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder} from "@angular/forms";
 
 
 @Component({
@@ -14,23 +14,23 @@ export class TetsfindComponent implements OnInit {
   constructor(private restConnectorService: RestConnectorService, private formPost: FormBuilder) {
   }
 
-  form = this.formPost.group({
+  addForm = this.formPost.group({
     lawName: '',
     lawType: '',
     lawNumber: ''
   });
 
   ngOnInit(): void {
-    this.restConnectorService.getRest().subscribe((data:any) => {
+    this.restConnectorService.getAll().subscribe((data:any) => {
       console.log(data);
       this.inf1 = data;
     })
   }
 
   postData() {
-    this.inf1=this.form.value;
-    this.restConnectorService.postRest(this.inf1);
-    console.log("postRest" + JSON.stringify(this.form))
+    this.inf1=this.addForm.value;
+    this.restConnectorService.postLaw(this.inf1);
+    console.log("postRest" + JSON.stringify(this.addForm))
   }
 
 }

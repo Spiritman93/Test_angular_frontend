@@ -13,15 +13,16 @@ export class RestConnectorService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public getRest() {
-    return this.httpClient.get("http://localhost:8081/testfind")
+  public getAll() {
+    return this.httpClient.get("http://localhost:8081/findAllLaws")
   }
 
-  public getRestTest() {
+  /*public getRestTest() {
     return this.httpClient.get("http://localhost:8081/testlawpage")
   }
+*/
 
-  public postRest(componentLaw: Law){
+  public postLaw(componentLaw: Law){
     return this.httpClient.post('http://localhost:8081/testpost', componentLaw)
   }
 

@@ -17,7 +17,7 @@ type = {{inf1.lawType}}
 
 
 <div class="form-group"><!--  submitForm-->
-  <form [FormGroup]="form" (ngSubmit)="postData()">
+  <form [formGroup]="addForm" (ngSubmit)="postData()">
   <label>lawName: </label>
   <input class="form-control" formControlName="lawName"/>
   <label>lawType: </label>
